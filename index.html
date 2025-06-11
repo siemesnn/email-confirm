@@ -34,7 +34,16 @@
     }
     .left-side {
       flex: 1;
-      background: url('verify_email.svg') center center/cover no-repeat;
+      background-color: #ffffff20; /* subtle translucent white for contrast */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .left-side img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
     }
     .right-side {
       flex: 1;
@@ -50,6 +59,7 @@
       width: 80px;
       height: 80px;
       margin-bottom: 20px;
+      object-fit: contain;
     }
     h1 {
       font-size: 2rem;
@@ -62,14 +72,13 @@
       text-align: center;
       max-width: 300px;
     }
-
     @media (max-width: 768px) {
       .main-container {
         flex-direction: column;
         height: auto;
       }
       .left-side {
-        height: 200px;
+        height: 250px;
       }
       .right-side {
         padding: 20px;
@@ -79,7 +88,9 @@
 </head>
 <body>
   <div class="main-container">
-    <div class="left-side"></div>
+    <div class="left-side">
+      <img src="verify_email.svg" alt="Verify Email Image" />
+    </div>
     <div class="right-side">
       <img src="mini_logo.svg" alt="Samurai Logo" class="logo" />
       <h1>Welcome to Samurai!</h1>
