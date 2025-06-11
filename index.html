@@ -10,50 +10,79 @@
       padding: 0;
       box-sizing: border-box;
     }
-    body {
+    body, html {
+      height: 100%;
+      width: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #7583CA;
-      height: 100vh;
+      display: flex;
+    }
+    .left-side {
+      flex: 1;
+      background: url('verify_email.svg') center center/cover no-repeat;
+    }
+    .right-side {
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      padding: 40px;
     }
     .glass-container {
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      padding: 40px 30px;
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 60px 40px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
       border: 1px solid rgba(255,255,255,0.2);
+      text-align: center;
+      color: #fff;
     }
     .logo {
-      width: 80px;
-      height: 80px;
+      width: 90px;
+      height: 90px;
+      margin: 20px 0;
       object-fit: contain;
-      margin-bottom: 20px;
     }
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 10px;
       color: #fff;
     }
     p {
       color: #e0e0e0;
       margin-top: 10px;
-      font-size: 1rem;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .left-side, .right-side {
+        width: 100%;
+        height: 50%;
+      }
+      .left-side {
+        background-position: top center;
+      }
+      .glass-container {
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="glass-container">
-    <img src="logo.png" alt="Samurai Logo" class="logo" />
-    <h1>Welcome to Samurai!</h1>
-    <p>Your email is now confirmed. You may go back to the app to continue your registration.</p>
+  <div class="left-side"></div>
+  <div class="right-side">
+    <div class="glass-container">
+      <h1>Welcome to Samurai!</h1>
+      <img src="mini_logo.svg" alt="Samurai Logo" class="logo" />
+      <p>Your email is now confirmed. You may go back to the app to continue your registration.</p>
+    </div>
   </div>
 </body>
 </html>
