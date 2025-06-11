@@ -14,8 +14,23 @@
       height: 100%;
       width: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #7583CA;
+      background-color: #7583CA;
       display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .main-container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      overflow: hidden;
+      width: 90%;
+      max-width: 900px;
+      height: 500px;
+      display: flex;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.2);
     }
     .left-side {
       flex: 1;
@@ -23,64 +38,51 @@
     }
     .right-side {
       flex: 1;
+      background-color: rgba(255,255,255,0.8);
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      padding: 40px;
-    }
-    .glass-container {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      border-radius: 20px;
-      padding: 60px 40px;
-      width: 100%;
-      max-width: 450px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.2);
-      text-align: center;
-      color: #fff;
+      align-items: center;
+      padding: 30px;
+      color: #333;
     }
     .logo {
-      width: 90px;
-      height: 90px;
-      margin: 20px 0;
-      object-fit: contain;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
     }
     h1 {
       font-size: 2rem;
       margin-bottom: 10px;
-      color: #fff;
+      color: #333;
     }
     p {
-      color: #e0e0e0;
-      margin-top: 10px;
-      font-size: 1.05rem;
+      font-size: 1rem;
+      color: #555;
+      text-align: center;
+      max-width: 300px;
     }
 
     @media (max-width: 768px) {
-      body {
+      .main-container {
         flex-direction: column;
-      }
-      .left-side, .right-side {
-        width: 100%;
-        height: 50%;
+        height: auto;
       }
       .left-side {
-        background-position: top center;
+        height: 200px;
       }
-      .glass-container {
-        padding: 40px 20px;
+      .right-side {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="left-side"></div>
-  <div class="right-side">
-    <div class="glass-container">
-      <h1>Welcome to Samurai!</h1>
+  <div class="main-container">
+    <div class="left-side"></div>
+    <div class="right-side">
       <img src="mini_logo.svg" alt="Samurai Logo" class="logo" />
+      <h1>Welcome to Samurai!</h1>
       <p>Your email is now confirmed. You may go back to the app to continue your registration.</p>
     </div>
   </div>
